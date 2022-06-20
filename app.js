@@ -30,6 +30,8 @@ app.get('/mensagem', async (req, res) => {
         console.error('Erro usuarios')
         res.status(500)
         res.end('Erro ao procurar usuários')
+    }finally{
+        ()=>{database.close()}
     }
 })
 
